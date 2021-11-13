@@ -1,10 +1,9 @@
 import {
     BrowserRouter as Router, Switch, Route, NavLink
   } from "react-router-dom";
-import About from "../components/About";
-import Home from '../components/Home';
-import Users from "../components/Users";
+
 import logo from '../logo.svg'
+import { LazyPage1, LazyPage2, LazyPage3 } from '../pages/';
   
   export default function Nav() {
     return (
@@ -14,20 +13,20 @@ import logo from '../logo.svg'
               <img src={logo} alt="react logo" />
             <ul>
               <li>
-                <NavLink exact to="/" activeClassName='nav-active'>Home</NavLink>
+                <NavLink exact to="/lazy1" activeClassName='nav-active'>Lazy 1</NavLink>
               </li>
               <li>
-                <NavLink exact to="/about" activeClassName='nav-active'>About</NavLink>
+                <NavLink exact to="/lazy2" activeClassName='nav-active'>Lazy 2</NavLink>
               </li>
               <li>
-                <NavLink exact to="/users" activeClassName='nav-active'>Users</NavLink>
+                <NavLink exact to="/lazy3" activeClassName='nav-active'>Lazy 3</NavLink>
               </li>
             </ul>
           </nav>
           <Switch>
-            <Route path="/about" component={About}/>
-            <Route path="/users" component={Users}/>
-            <Route path="/" component={Home}/>
+            <Route path="/lazy1" component={LazyPage1}/>
+            <Route path="/lazy2" component={LazyPage2}/>
+            <Route path="/lazy3" component={LazyPage3}/>
           </Switch>
         </div>
       </Router>

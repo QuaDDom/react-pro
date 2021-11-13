@@ -5,3 +5,5 @@ export function LazyPage2() {
         </div>
     )
 }
+
+export default LazyPage2;

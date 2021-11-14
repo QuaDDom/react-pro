@@ -2,7 +2,7 @@ import {
     BrowserRouter as Router, Switch, Route, NavLink
   } from "react-router-dom";
 import About from "../components/About";
-import Home from '../components/Home';
+import Shopping from "../pages/Shopping";
 import Users from "../components/Users";
 import logo from '../logo.svg'
   
@@ -27,7 +27,7 @@ import logo from '../logo.svg'
           <Switch>
             <Route path="/about" component={About}/>
             <Route path="/users" component={Users}/>
-            <Route path="/" component={Home}/>
+            <Route path="/" component={Shopping}/>
           </Switch>
         </div>
       </Router>

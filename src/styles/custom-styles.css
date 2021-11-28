@@ -1,0 +1,25 @@
+.bg-dark{
+    background: #2e2e2e;
+    color: #fff;
+}
+.text-bold{
+    font-weight: bold;
+}
+.text-white{
+    color: #fff;
+}
+.hover-image{
+    width: 100%;
+    height: 100%;
+    transition: 0.35s;
+}
+.hover-image:hover{
+    transform: scale(1.3);
+}
+.custom-button button, .custom-button div{
+    color: #fff;
+    border-color: #fff;
+}
+.custom-button button:hover{
+    background: rgba(255,255,255,0.1)
+}

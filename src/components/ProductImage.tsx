@@ -4,10 +4,11 @@ import { ProductContext } from '../context/ProductContext';
 
 interface ProductImagePropsI{
     img?: string,
-    style: string
+    style: string,
+    className?: string
 }
 
-export default function ProductImage({img='', style}: ProductImagePropsI) {
+export default function ProductImage({img='', style, className}: ProductImagePropsI) {
     const { product } = useContext(ProductContext);
     let imgToShow: string;
 
@@ -21,6 +22,8 @@ export default function ProductImage({img='', style}: ProductImagePropsI) {
    
 
     return (
-        <img className={style} src={imgToShow} alt="Coffee Mug" />
+        <div className={`${style}`}>
+            <img className={`${className}`} src={imgToShow} alt="Coffee Mug" />
+        </div>
     )
 }

@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { CSSProperties, ReactElement } from 'react';
 import styles from '../styles/styles.module.css';
 import ProductTitle from './ProductTitle';
 import ProductImage from './ProductImage';
@@ -10,6 +10,8 @@ import { useProduct } from '../hooks/useProduct';
 interface PropsI {
     children?: ReactElement | ReactElement[],
     product?: ProductI,
+    className?: string
+    style?: CSSProperties
 }
 
 interface ProductI{
@@ -24,7 +26,7 @@ const productDefault = {
     image: noImage
 }
 
-export default function ProductCard({ children, product = productDefault }: PropsI) {
+export default function ProductCard({ children, product = productDefault, className, style }: PropsI) {
     const { Provider } = ProductContext;
     const {counter, handleClick} = useProduct();
     return ( 
@@ -33,7 +35,7 @@ export default function ProductCard({ children, product = productDefault }: Prop
             handleClick,
             product
         }}>
-            <div  className={styles.productCard}>
+            <div  className={`${styles.productCard} ${className}`} style={style || {}}>
                 { children }
             </div>
         </Provider>

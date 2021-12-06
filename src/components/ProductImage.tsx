@@ -4,7 +4,7 @@ import { ProductContext } from '../context/ProductContext';
 
 interface ProductImagePropsI{
     img?: string,
-    style: string,
+    style?: string,
     className?: string
 }
 

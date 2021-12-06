@@ -12,9 +12,9 @@ export default function ProductButtons({ className, style }: ProductsI) {
     
     return (
     <div className={`${styles.buttonsContainer} ${className}`} style={style || {}} >
-        <button className={styles.buttonMinus} onClick={()=>handleClick('decrease')}>-</button>
+        <button className={styles.buttonMinus} onClick={()=>handleClick(-1)}>-</button>
         <div className={styles.countLabel}>{counter}</div>
-        <button className={styles.buttonAdd} onClick={()=>handleClick('increase')}>+</button>
+        <button className={styles.buttonAdd} onClick={()=>handleClick(+1)}>+</button>
     </div>
     )
 }

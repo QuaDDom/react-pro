@@ -23,3 +23,9 @@
 .custom-button button:hover{
     background: rgba(255,255,255,0.1)
 }
+
+.shopping-cart {
+    position: fixed;
+    right: 10px;
+    top: 0;
+}

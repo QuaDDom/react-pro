@@ -8,7 +8,7 @@ interface ProductI{
 
 interface ProductContextPropsI{
     counter: number,
-    handleClick: (method: string)=> void,
+    handleClick: (value: number)=> void,
     product:  ProductI
 }
 

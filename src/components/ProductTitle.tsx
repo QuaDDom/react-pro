@@ -3,7 +3,7 @@ import { ProductContext } from '../context/ProductContext';
 
 interface PropsI{
     title?: string,
-    style: string,
+    style?: string,
     className?: string
 }
 

@@ -6,18 +6,22 @@ import ProductButtons from './ProductButtons';
 import noImage from '../assets/no-image.jpg';
 import { ProductContext } from '../context/ProductContext';
 import { useProduct } from '../hooks/useProduct';
+import { OnChangeArgsI } from '../interfaces/interfaces';
 
 interface PropsI {
     children?: ReactElement | ReactElement[],
     product?: ProductI,
-    className?: string
-    style?: CSSProperties
+    className?: string,
+    style?: CSSProperties,
+    onChange?: (args: OnChangeArgsI)=> void,
+    value?: number
 }
 
 interface ProductI{
     id: string,
     title: string,
     image?: string,
+    count?: number
 }
 
 const productDefault = {
@@ -26,9 +30,14 @@ const productDefault = {
     image: noImage
 }
 
-export default function ProductCard({ children, product = productDefault, className, style }: PropsI) {
+export default function ProductCard({ children, product = productDefault, className, style, onChange, value }: PropsI) {
     const { Provider } = ProductContext;
-    const {counter, handleClick} = useProduct();
+    const {counter, handleClick} = useProduct({
+        onChange,
+        product,
+        value
+    });
+
     return ( 
         <Provider value={{
             counter,

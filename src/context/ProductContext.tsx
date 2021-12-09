@@ -9,7 +9,8 @@ interface ProductI{
 interface ProductContextPropsI{
     counter: number,
     handleClick: (value: number)=> void,
-    product:  ProductI
+    product:  ProductI,
+    maxCount?: number
 }
 
 export const ProductContext = createContext({

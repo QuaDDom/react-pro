@@ -24,26 +24,29 @@ interface PropsI{
 export default function ShoppingCart({ shoppingCart, onProductCountChange }: PropsI) {
 
     return (
-        <div className="shopping-cart">
-            {
-                Object.entries( shoppingCart ).map( ([key, product]) => (              
-                    <ProductCard 
-                    key={key}
-                    className="bg-dark"
-                    style={{ width: '95px'}}
-                    value={product.count}
-                    onChange={ (e)=> onProductCountChange(e, product)}
-                    >
-                        <ProductImage 
-                        img={product.image}
-                        className="productImg hover-image"
-                        />
-                        <ProductButtons
-                        className="custom-button"
-                        />   
-                    </ProductCard>
-                ))
-            }
-        </div>
+{        // <div className="shopping-cart">
+        //     {
+        //         Object.entries( shoppingCart ).map( ([key, product]) => (              
+        //             <ProductCard 
+        //             key={key}
+        //             className="bg-dark"
+        //             style={{ width: '95px'}}
+        //             initialValues={{
+        //                 count: 10,
+        //                 maxCount: 10
+        //             }}
+        //             >
+        //                 <ProductImage 
+        //                 img={product.image}
+        //                 className="productImg hover-image"
+        //                 />
+        //                 <ProductButtons
+        //                 className="custom-button"
+        //                 />   
+        //             </ProductCard>
+        //         ))
+        //     }
+        // </div> 
+}
     )
 }

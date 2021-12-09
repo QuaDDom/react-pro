@@ -74,3 +74,9 @@
 .buttonAdd:hover {
     background-color: rgba(0, 0, 0, 0.1);
 }
+
+.disabled {
+    border: 1px solid #f66;
+    filter: opacity(0.7); 
+    cursor: no-drop;
+}

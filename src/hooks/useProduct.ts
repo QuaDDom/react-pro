@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { InitialValuesI, OnChangeArgsI, ProductsI } from '../interfaces/interfaces';
 
-interface useProductsArg{
+interface useProductsArgI{
     product: ProductsI,
     onChange?: (args: OnChangeArgsI)=> void,
     value?: number,
     initialValues?: InitialValuesI
 }
 
-export const useProduct = ({product, onChange, value=0, initialValues }: useProductsArg)=>{
+export const useProduct = ({product, onChange, value=0, initialValues }: useProductsArgI)=>{
     const [counter, setCounter] = useState<number>( initialValues?.count || value );
     const isMounted = useRef(false);
 

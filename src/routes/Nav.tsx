@@ -5,6 +5,7 @@ import About from "../components/About";
 import Home from '../components/Home';
 import Users from "../components/Users";
 import logo from '../logo.svg'
+import Register from "../pages/Register";
   
   export default function Nav() {
     return (
@@ -20,13 +21,13 @@ import logo from '../logo.svg'
                 <NavLink exact to="/about" activeClassName='nav-active'>About</NavLink>
               </li>
               <li>
-                <NavLink exact to="/users" activeClassName='nav-active'>Users</NavLink>
+                <NavLink exact to="/register" activeClassName='nav-active'>Register</NavLink>
               </li>
             </ul>
           </nav>
           <Switch>
             <Route path="/about" component={About}/>
-            <Route path="/users" component={Users}/>
+            <Route path="/register" component={Register}/>
             <Route path="/" component={Home}/>
           </Switch>
         </div>

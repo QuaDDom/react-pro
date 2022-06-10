@@ -1,36 +1,38 @@
+import { Suspense } from "react";
 import {
-    BrowserRouter as Router, Switch, Route, NavLink
-  } from "react-router-dom";
-import About from "../components/About";
-import Home from '../components/Home';
-import Users from "../components/Users";
+    BrowserRouter as Router, Switch, Route, NavLink, Redirect
+} from "react-router-dom";
 import logo from '../logo.svg'
+import { routes } from './routes';
   
   export default function Nav() {
     return (
+      <Suspense fallback={null}>
       <Router>
         <div className='main-layout'>
           <nav>
               <img src={logo} alt="react logo" />
             <ul>
-              <li>
-                <NavLink exact to="/" activeClassName='nav-active'>Home</NavLink>
+            {routes.map(({path, name}, index)=>
+              <li key={index}>
+                <NavLink 
+                exact 
+                to={path} 
+                activeClassName='nav-active'
+                >{name}</NavLink>
               </li>
-              <li>
-                <NavLink exact to="/about" activeClassName='nav-active'>About</NavLink>
-              </li>
-              <li>
-                <NavLink exact to="/users" activeClassName='nav-active'>Users</NavLink>
-              </li>
+            )}
             </ul>
           </nav>
+
           <Switch>
-            <Route path="/about" component={About}/>
-            <Route path="/users" component={Users}/>
-            <Route path="/" component={Home}/>
+            {routes.map(({path, Component}, index)=> <Route path={path} component={Component} key={index}/>)}
+            <Redirect to={ routes[0].path }/>
           </Switch>
+
         </div>
       </Router>
+      </Suspense>
     );
   }
   

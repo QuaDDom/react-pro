@@ -3,7 +3,7 @@ export function LazyPage1() {
         <div>
             <h2>About</h2>
         </div>
-    )
+    );
 }
 
 export default LazyPage1;

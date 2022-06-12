@@ -2,11 +2,11 @@ import logo from './logo.svg';
 import Nav from './routes/Nav';
 
 function App() {
-  return (
-    <>
-    <Nav/>
-    </>
-  );
+    return (
+        <>
+            <Nav />
+        </>
+    );
 }
 
 export default App;
